@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScootUP - Sua Próxima Viagem Começa Aqui!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS Básicos para uma aparência moderna */
+        :root {
+            --cor-principal: #007bff; /* Azul Elétrico para destaque */
+            --cor-secundaria: #f8f9fa; /* Cinza claro */
+            --cor-texto: #333;
+            --cor-fundo: #fff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--cor-fundo);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--cor-principal);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--cor-texto);
+            font-weight: 600;
+        }
+
+        /* Seção Herói (Banner Principal) */
+        .hero {
+            background: url('[attachment_0](attachment)') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Botão CTA Principal */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-principal);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Seções de Conteúdo */
+        .section-padding {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: var(--cor-principal);
+        }
+        
+        /* Grid de Produtos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background-color: var(--cor-secundaria);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .product-card .price {
+            font-size: 1.5em;
+            color: #28a745; /* Verde para Preço */
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366; /* Verde WhatsApp */
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        /* Responsividade (Ajustes para telas menores) */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            nav {
+                display: none; /* Simplificando o menu em telas pequenas */
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">ScootUP</a>
+        <nav>
+            <a href="#modelos">Modelos</a>
+            <a href="#vantagens">Vantagens</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <a href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20scooters!" target="_blank" class="cta-button">Fale Conosco</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Liberdade Urbana em Duas Rodas.</h1>
+            <p>Descubra a linha de scooters elétricas mais rápidas e sustentáveis.</p>
+            <a href="#modelos" class="cta-button">⚡ Explore os Modelos</a>
+        </div>
+    </section>
+
+    <section id="modelos" class="section-padding">
+        <h2 class="section-title">Nossos Modelos em Destaque</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <img src="" alt="Scooter Urbana Compacta">
+                <h3>CityRide S1</h3>
+                <p>Ideal para o dia a dia e fácil de guardar.</p>
+                <div class="price">R$ 4.990</div>
+                <a href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20modelo%20CityRide%20S1." target="_blank" class="cta-button" style="background-color: #28a745;">Chamar no WhatsApp!</a>
+            </div>
+            
+            <div class="product-card">
+                <img src="" alt="Scooter de Alto Desempenho">
+                <h3>PowerMax X3</h3>
+                <p>Potência e autonomia para longas distâncias.</p>
+                <div class="price">R$ 8.500</div>
+                 <a href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20modelo%20PowerMax%20X3." target="_blank" class="cta-button" style="background-color: #28a745;">Chamar no WhatsApp!</a>
+            </div>
+            
+             <div class="product-card">
+                <img src="" alt="Scooter de Design Premium">
+                <h3>Aero V20</h3>
+                <p>Design premiado e conforto superior.</p>
+                <div class="price">R$ 6.890</div>
+                 <a href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20modelo%20Aero%20V20." target="_blank" class="cta-button" style="background-color: #28a745;">Chamar no WhatsApp!</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="vantagens" class="section-padding" style="background-color: var(--cor-secundaria);">
+        <h2 class="section-title">Por Que Escolher a ScootUP?</h2>
+        <div class="product-grid" style="gap: 50px;">
+            <div>
+                <i class="fas fa-leaf" style="font-size: 3em; color: var(--cor-principal); margin-bottom: 10px;"></i>
+                <h3>Sustentabilidade</h3>
+                <p>100% elétricas. Zero emissão de carbono.</p>
+            </div>
+            <div>
+                <i class="fas fa-bolt" style="font-size: 3em; color: var(--cor-principal); margin-bottom: 10px;"></i>
+                <h3>Alta Performance</h3>
+                <p>Motores potentes para encarar qualquer ladeira.</p>
+            </div>
+            <div>
+                <i class="fas fa-cogs" style="font-size: 3em; color: var(--cor-principal); margin-bottom: 10px;"></i>
+                <h3>Suporte Premium</h3>
+                <p>Assistência técnica especializada em todo o Brasil.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section-padding">
+        <h2 class="section-title">Não Perca Tempo!</h2>
+        <p style="font-size: 1.1em; margin-bottom: 40px;">Fale diretamente com um consultor e encontre a scooter ideal para você.</p>
+        <a href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20scooters%20e%20op%C3%A7%C3%B5es%20de%20financiamento!" target="_blank" class="cta-button" style="font-size: 1.5em; padding: 15px 50px;">📲 Chamar no WhatsApp Agora!</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ScootUP. Todos os direitos reservados. | Design por Gemini.</p>
+        <div>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20gerais%20sobre%20os%20modelos!" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
